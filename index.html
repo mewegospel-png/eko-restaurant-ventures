@@ -1,793 +1,2288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Eko Restaurant Ventures | Amala Spot Lugbe</title>
+<title>Eko Restaurant Ventures — Amala Spot Lugbe</title>
 
-  <meta
-    name="description"
-    content="Eko Restaurant Ventures - Amala Spot in FHA Lugbe. Delicious Nigerian meals, available for takeaway and delivery."
-  >
+<meta name="description" content="Authentic Nigerian food at Eko Restaurant Ventures, Amala Spot Lugbe. Order directly through WhatsApp.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fffaf2;
-      color: #222;
-      line-height: 1.6;
-    }
+<style>
+:root {
+    --green: #0d4b35;
+    --green-dark: #073524;
+    --green-light: #eaf4ee;
+    --gold: #d49a32;
+    --gold-light: #f7e7c2;
+    --cream: #fffaf2;
+    --white: #ffffff;
+    --black: #17201c;
+    --gray: #68716c;
+    --border: #e7e5df;
+    --shadow: 0 15px 40px rgba(0,0,0,.09);
+    --radius: 20px;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    img {
-      width: 100%;
-      display: block;
-    }
+html {
+    scroll-behavior: smooth;
+}
 
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #111;
-      color: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    line-height: 1.6;
+}
 
-    .nav {
-      max-width: 1150px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+img {
+    width: 100%;
+    display: block;
+}
 
-    .logo {
-      font-size: 21px;
-      font-weight: 800;
-      color: #f4a000;
-    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,250,242,.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    height: 78px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.logo-text strong {
+    display: block;
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+}
+
+.logo-text span {
+    display: block;
+    font-size: 11px;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.nav-order {
+    background: var(--green);
+    color: white !important;
+    padding: 11px 18px;
+    border-radius: 30px;
+}
+
+.nav-order:hover {
+    background: var(--green-dark);
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 680px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(4,32,23,.92) 0%, rgba(4,32,23,.75) 42%, rgba(4,32,23,.25) 100%),
+        url("assets/images/hero-amala.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 80px 22px;
+    color: white;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.2);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1.02;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    max-width: 580px;
+    font-size: 18px;
+    color: rgba(255,255,255,.88);
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 0;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #17100a;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.btn-outline {
+    color: white;
+    border: 1px solid rgba(255,255,255,.5);
+    background: rgba(255,255,255,.08);
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--green);
+}
+
+.hero-info {
+    max-width: 1200px;
+    width: calc(100% - 44px);
+    margin: -45px auto 0;
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.info-box {
+    padding: 24px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+}
+
+.info-box:last-child {
+    border-right: 0;
+}
+
+.info-icon {
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.info-box strong {
+    display: block;
+    font-size: 14px;
+}
+
+.info-box span {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 95px 22px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--green);
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 13px;
+}
+
+.section-heading p {
+    color: var(--gray);
+}
+
+/* =========================
+   FEATURED FOOD
+========================= */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.food-card {
+    background: white;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+    border: 1px solid var(--border);
+    transition: .25s ease;
+    cursor: pointer;
+}
+
+.food-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow);
+}
+
+.food-image {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.food-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: .4s ease;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.06);
+}
+
+.popular {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--gold);
+    color: #1d1205;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.food-body {
+    padding: 20px;
+}
+
+.food-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: start;
+}
+
+.food-body h3 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+}
+
+.price {
+    color: var(--green);
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.food-body p {
+    color: var(--gray);
+    font-size: 13px;
+    margin: 9px 0 17px;
+}
+
+.order-food {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 11px 14px;
+    background: var(--green-light);
+    color: var(--green);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.food-card:hover .order-food {
+    background: var(--green);
+    color: white;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.menu-section {
+    background: white;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 35px;
+}
+
+.menu-tab {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 10px 17px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 17px 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--cream);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.menu-item:hover {
+    background: var(--green-light);
+    border-color: var(--green);
+    transform: translateX(3px);
+}
+
+.menu-item-info strong {
+    display: block;
+    color: var(--green);
+    font-size: 15px;
+}
+
+.menu-item-info small {
+    color: var(--gray);
+    font-size: 11px;
+}
+
+.menu-price {
+    color: var(--green);
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 190px;
+    gap: 12px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-image {
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    font-family: "Playfair Display", serif;
+    color: var(--green);
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.about-content p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.about-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.about-list li {
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+.about-list li::before {
+    content: "✓";
+    color: var(--gold);
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+/* =========================
+   LOCATION
+========================= */
+
+.location {
+    background: var(--green);
+    color: white;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.location h2 {
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.location p {
+    color: rgba(255,255,255,.78);
+}
+
+.contact-row {
+    display: flex;
+    gap: 13px;
+    margin: 22px 0;
+    align-items: center;
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-box {
+    min-height: 330px;
+    border-radius: 25px;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(13,75,53,.3),rgba(13,75,53,.3)),
+        url("assets/images/IMG_0789.jpg") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-button {
+    background: white;
+    color: var(--green);
+    padding: 15px 22px;
+    border-radius: 30px;
+    font-weight: 800;
+}
+
+/* =========================
+   REVIEWS
+========================= */
+
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review {
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.stars {
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+.review p {
+    color: var(--gray);
+    font-size: 14px;
+    font-style: italic;
+}
+
+.review strong {
+    display: block;
+    margin-top: 15px;
+    color: var(--green);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #05251a;
+    color: white;
+    padding: 50px 22px 30px;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-brand strong {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.footer-brand p {
+    color: rgba(255,255,255,.6);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,.75);
+    font-size: 13px;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 35px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.5);
+    font-size: 12px;
+}
+
+/* =========================
+   WHATSAPP FLOATING BUTTON
+========================= */
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    transition: .2s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 440px;
+    background: white;
+    border-radius: 22px;
+    padding: 28px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    right: 18px;
+    top: 14px;
+    border: 0;
+    background: transparent;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.modal-box h3 {
+    color: var(--green);
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.modal-box p {
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cream);
+    border-radius: 13px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.qty-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--green);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.qty-number {
+    font-weight: 800;
+}
+
+.modal-order {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: 0;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
 
     .nav-links {
-      display: flex;
-      gap: 25px;
-      align-items: center;
+        position: absolute;
+        top: 78px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--cream);
+        padding: 20px 22px;
+        box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    }
+
+    .nav-links.open {
+        display: flex;
     }
 
     .nav-links a {
-      font-weight: 600;
-      font-size: 14px;
+        padding: 10px;
     }
 
-    .nav-links a:hover {
-      color: #f4a000;
+    .menu-toggle {
+        display: block;
     }
 
-    .order-btn {
-      background: #25d366;
-      color: white;
-      padding: 10px 17px;
-      border-radius: 25px;
-      font-weight: 700;
-    }
-
-    /* HERO */
     .hero {
-      min-height: 650px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
-        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-      color: white;
+        min-height: 620px;
+    }
+
+    .hero-info {
+        grid-template-columns: repeat(2,1fr);
+        margin-top: -30px;
+    }
+
+    .info-box:nth-child(2) {
+        border-right: 0;
+    }
+
+    .info-box:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .food-grid,
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about,
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 160px;
+    }
+
+    .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .about-content h2,
+    .location h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .logo-text strong {
+        font-size: 16px;
+    }
+
+    .logo-text span {
+        font-size: 9px;
+    }
+
+    .logo-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero {
+        min-height: 610px;
     }
 
     .hero-content {
-      width: 100%;
-      max-width: 1150px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    .hero-small {
-      color: #f4a000;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
+        padding: 65px 20px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1.05;
-      max-width: 750px;
-      margin-bottom: 20px;
+        font-size: 47px;
     }
 
     .hero p {
-      max-width: 650px;
-      font-size: 19px;
-      margin-bottom: 30px;
-      color: #f5f5f5;
+        font-size: 15px;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+    .hero-info {
+        width: calc(100% - 28px);
     }
 
-    .hero-buttons a {
-      padding: 14px 24px;
-      border-radius: 30px;
-      font-weight: 800;
+    .info-box {
+        padding: 17px 8px;
     }
 
-    .primary {
-      background: #f4a000;
-      color: #111;
+    .section {
+        padding: 70px 18px;
     }
 
-    .secondary {
-      border: 2px solid white;
-      color: white;
+    .food-image {
+        height: 230px;
     }
 
-    /* GENERAL */
-    section {
-      padding: 75px 20px;
+    .gallery {
+        grid-auto-rows: 130px;
+        gap: 8px;
     }
 
-    .container {
-      max-width: 1150px;
-      margin: auto;
+    .whatsapp-float {
+        width: 53px;
+        height: 53px;
+        right: 15px;
+        bottom: 15px;
     }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title span {
-      color: #f4a000;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin-top: 5px;
-    }
-
-    .section-title p {
-      max-width: 650px;
-      margin: 10px auto 0;
-      color: #666;
-    }
-
-    /* ABOUT */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .about-image {
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
-    }
-
-    .about-image img {
-      height: 430px;
-      object-fit: cover;
-    }
-
-    .about-text h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      color: #555;
-      margin-bottom: 18px;
-    }
-
-    .location-box {
-      background: #fff;
-      padding: 18px;
-      border-left: 5px solid #f4a000;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-
-    /* MENU */
-    #menu {
-      background: #f4eadb;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .menu-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 7px 20px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .menu-card img {
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .menu-info {
-      padding: 20px;
-    }
-
-    .menu-info h3 {
-      font-size: 21px;
-      margin-bottom: 5px;
-    }
-
-    .menu-info p {
-      color: #777;
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    .price {
-      font-weight: 900;
-      color: #d88300;
-      font-size: 18px;
-    }
-
-    /* WHY US */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .feature {
-      text-align: center;
-      padding: 30px 20px;
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .feature-icon {
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
-
-    .feature h3 {
-      margin-bottom: 8px;
-    }
-
-    .feature p {
-      color: #666;
-    }
-
-    /* CTA */
-    .cta {
-      background:
-        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 43px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: #eee;
-    }
-
-    /* CONTACT */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .contact-card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    }
-
-    .contact-card h3 {
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
-
-    .contact-card p {
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .contact-link {
-      display: inline-block;
-      margin-top: 15px;
-      background: #25d366;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-weight: 800;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-    }
-
-    footer .footer-logo {
-      color: #f4a000;
-      font-size: 22px;
-      font-weight: 900;
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      color: #bbb;
-      font-size: 14px;
-    }
-
-    /* FLOATING WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 2000;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25d366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
-    }
-
-    /* MOBILE */
-    @media (max-width: 800px) {
-      .nav {
-        flex-direction: column;
-      }
-
-      .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero {
-        min-height: 600px;
-      }
-
-      .about,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .menu-grid,
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image img {
-        height: 320px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .cta h2 {
-        font-size: 34px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <nav class="nav">
-      <a href="#home" class="logo">EKO RESTAURANT VENTURES</a>
+<!-- =========================
+     HEADER
+========================= -->
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#contact">Contact</a>
+<header>
+    <nav class="navbar">
 
-        <!-- CHANGE THE NUMBER BELOW -->
-        <a
-          class="order-btn"
-          href="https://wa.me/2348033187101"
-          target="_blank"
-        >
-          Order on WhatsApp
+        <a href="#home" class="logo">
+            <div class="logo-icon">E</div>
+
+            <div class="logo-text">
+                <strong>EKO VENTURES</strong>
+                <span>Amala Spot Lugbe</span>
+            </div>
         </a>
-      </div>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+            <a href="#location">Find Us</a>
+            <a class="nav-order" href="https://wa.me/2348033187101?text=Hello%20Eko%20Restaurant%20Ventures%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank">
+                Order on WhatsApp
+            </a>
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     </nav>
-  </header>
+</header>
 
 
-  <!-- HERO -->
-  <section class="hero" id="home">
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
     <div class="hero-content">
 
-      <div class="hero-small">
-        Amala Spot • FHA Lugbe
-      </div>
+        <div class="hero-badge">
+            🍲 Authentic Nigerian Kitchen
+        </div>
 
-      <h1>
-        Good Food.<br>
-        Good People.<br>
-        Good Vibes.
-      </h1>
+        <h1>
+            Authentic Flavors.<br>
+            <span>Traditional Roots.</span>
+        </h1>
 
-      <p>
-        Welcome to Eko Restaurant Ventures — your spot for delicious,
-        satisfying Nigerian meals in FHA Lugbe.
-      </p>
+        <p>
+            Experience delicious Nigerian amala, gbegiri, ewedu,
+            soups, rice and assorted proteins at Eko Restaurant Ventures
+            in Lugbe, Abuja.
+        </p>
 
-      <div class="hero-buttons">
-        <a href="#menu" class="primary">View Our Menu</a>
+        <div class="hero-buttons">
 
-        <!-- CHANGE THE NUMBER BELOW -->
-        <a
-          href="https://wa.me/2348033187101"
-          target="_blank"
-          class="secondary"
-        >
-          Order Now
-        </a>
-      </div>
+            <a class="btn btn-primary"
+               href="#menu">
+                🍽️ Explore Our Menu
+            </a>
+
+            <a class="btn btn-outline"
+               href="https://wa.me/2348033187101?text=Hello%20Eko%20Restaurant%20Ventures%2C%20I%20would%20like%20to%20place%20an%20order."
+               target="_blank">
+                💬 Order on WhatsApp
+            </a>
+
+        </div>
 
     </div>
-  </section>
+
+</section>
 
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
+<!-- =========================
+     INFO
+========================= -->
 
-      <div class="about">
+<div class="hero-info">
+
+    <div class="info-box">
+        <div class="info-icon">🎵</div>
+        <strong>Live Music</strong>
+        <span>Sports Screenings</span>
+    </div>
+
+    <div class="info-box">
+        <div class="info-icon">🌿</div>
+        <strong>Outdoor Seating</strong>
+        <span>Relax & Enjoy</span>
+    </div>
+
+    <div class="info-box">
+        <div class="info-icon">🕐</div>
+        <strong>Open 24 Hours</strong>
+        <span>7 Days a Week</span>
+    </div>
+
+    <div class="info-box">
+        <div class="info-icon">🛵</div>
+        <strong>Delivery</strong>
+        <span>Available Daily</span>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FEATURED FOOD
+========================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">Our Favourites</div>
+
+        <h2>Chef's Specials</h2>
+
+        <p>
+            Tap any meal to order it directly through WhatsApp.
+        </p>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+        <!-- 1 -->
+
+        <div class="food-card"
+             onclick="openOrder('Abula Combo','₦3,200')">
+
+            <div class="food-image">
+
+                <img src="assets/images/IMG_0762.jpg"
+                     alt="Abula Combo">
+
+                <span class="popular">POPULAR</span>
+
+            </div>
+
+            <div class="food-body">
+
+                <div class="food-title-row">
+
+                    <h3>Abula Combo</h3>
+
+                    <span class="price">₦3,200</span>
+
+                </div>
+
+                <p>
+                    Soft amala with silky gbegiri, ewedu and rich stew.
+                </p>
+
+                <div class="order-food">
+                    💬 Tap to Order
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="food-card"
+             onclick="openOrder('Efo Riro & Amala','₦3,500')">
+
+            <div class="food-image">
+
+                <img src="assets/images/IMG_0761.jpg"
+                     alt="Efo Riro and Amala">
+
+                <span class="popular">POPULAR</span>
+
+            </div>
+
+            <div class="food-body">
+
+                <div class="food-title-row">
+
+                    <h3>Efo Riro & Amala</h3>
+
+                    <span class="price">₦3,500</span>
+
+                </div>
+
+                <p>
+                    Rich vegetable stew with assorted meat and chicken.
+                </p>
+
+                <div class="order-food">
+                    💬 Tap to Order
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="food-card"
+             onclick="openOrder('Assorted Pepper Bowl','₦4,800')">
+
+            <div class="food-image">
+
+                <img src="assets/images/IMG_0763.jpg"
+                     alt="Assorted Pepper Bowl">
+
+            </div>
+
+            <div class="food-body">
+
+                <div class="food-title-row">
+
+                    <h3>Assorted Pepper Bowl</h3>
+
+                    <span class="price">₦4,800</span>
+
+                </div>
+
+                <p>
+                    Shaki, ponmo and beef simmered in local herbs.
+                </p>
+
+                <div class="order-food">
+                    💬 Tap to Order
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="food-card"
+             onclick="openOrder('Egusi Deluxe','₦4,200')">
+
+            <div class="food-image">
+
+                <img src="assets/images/IMG_0764.jpg"
+                     alt="Egusi Deluxe">
+
+                <span class="popular">POPULAR</span>
+
+            </div>
+
+            <div class="food-body">
+
+                <div class="food-title-row">
+
+                    <h3>Egusi Deluxe</h3>
+
+                    <span class="price">₦4,200</span>
+
+                </div>
+
+                <p>
+                    Melon seed soup with assorted meat and pounded yam.
+                </p>
+
+                <div class="order-food">
+                    💬 Tap to Order
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="food-card"
+             onclick="openOrder('Fisherman’s Amala','₦3,800')">
+
+            <div class="food-image">
+
+                <img src="assets/images/IMG_0766.jpg"
+                     alt="Fisherman's Amala">
+
+            </div>
+
+            <div class="food-body">
+
+                <div class="food-title-row">
+
+                    <h3>Fisherman's Amala</h3>
+
+                    <span class="price">₦3,800</span>
+
+                </div>
+
+                <p>
+                    Fresh fish in peppery tomato stew with ewedu and amala.
+                </p>
+
+                <div class="order-food">
+                    💬 Tap to Order
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="food-card"
+             onclick="openOrder('Seafood Ewedu Special','₦5,500')">
+
+            <div class="food-image">
+
+                <img src="assets/images/IMG_0768.jpg"
+                     alt="Seafood Ewedu Special">
+
+                <span class="popular">HOUSE FAVOURITE</span>
+
+            </div>
+
+            <div class="food-body">
+
+                <div class="food-title-row">
+
+                    <h3>Seafood Ewedu Special</h3>
+
+                    <span class="price">₦5,500</span>
+
+                </div>
+
+                <p>
+                    Prawns, ponmo and greens in a rich spicy broth.
+                </p>
+
+                <div class="order-food">
+                    💬 Tap to Order
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="section menu-section" id="menu">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">Order Direct</div>
+
+        <h2>Our Menu</h2>
+
+        <p>
+            Tap any item below and WhatsApp will open with your order ready.
+        </p>
+
+    </div>
+
+
+    <div class="menu-tabs">
+
+        <button class="menu-tab active"
+                onclick="filterMenu('all', this)">
+            All
+        </button>
+
+        <button class="menu-tab"
+                onclick="filterMenu('soups', this)">
+            Soups
+        </button>
+
+        <button class="menu-tab"
+                onclick="filterMenu('swallow', this)">
+            Swallow
+        </button>
+
+        <button class="menu-tab"
+                onclick="filterMenu('protein', this)">
+            Protein
+        </button>
+
+        <button class="menu-tab"
+                onclick="filterMenu('rice', this)">
+            Rice
+        </button>
+
+    </div>
+
+
+    <div class="menu-list" id="menuList">
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Ewedu')">
+
+            <div class="menu-item-info">
+                <strong>Ewedu</strong>
+                <small>Fresh smooth leafy soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Gbegiri')">
+
+            <div class="menu-item-info">
+                <strong>Gbegiri</strong>
+                <small>Traditional bean soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Egusi')">
+
+            <div class="menu-item-info">
+                <strong>Egusi</strong>
+                <small>Rich melon seed soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Oha')">
+
+            <div class="menu-item-info">
+                <strong>Oha</strong>
+                <small>Traditional Nigerian soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Vegetable Soup')">
+
+            <div class="menu-item-info">
+                <strong>Vegetable</strong>
+                <small>Fresh Nigerian vegetable soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Bitterleaf Soup')">
+
+            <div class="menu-item-info">
+                <strong>Bitterleaf</strong>
+                <small>Classic Nigerian soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Ogbono')">
+
+            <div class="menu-item-info">
+                <strong>Ogbono</strong>
+                <small>Rich and hearty soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="soups"
+             onclick="orderItem('Okro')">
+
+            <div class="menu-item-info">
+                <strong>Okro</strong>
+                <small>Fresh okro soup</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <!-- SWALLOW -->
+
+        <div class="menu-item" data-category="swallow"
+             onclick="orderItem('Black Amala')">
+
+            <div class="menu-item-info">
+                <strong>Black Amala</strong>
+                <small>Traditional swallow</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="swallow"
+             onclick="orderItem('Semo')">
+
+            <div class="menu-item-info">
+                <strong>Semo</strong>
+                <small>Soft smooth swallow</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="swallow"
+             onclick="orderItem('Akpu')">
+
+            <div class="menu-item-info">
+                <strong>Akpu</strong>
+                <small>Traditional cassava swallow</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="swallow"
+             onclick="orderItem('Eba')">
+
+            <div class="menu-item-info">
+                <strong>Eba</strong>
+                <small>Garri swallow</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="swallow"
+             onclick="orderItem('Fufu')">
+
+            <div class="menu-item-info">
+                <strong>Fufu</strong>
+                <small>Soft traditional swallow</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="swallow"
+             onclick="orderItem('Pounded Yam')">
+
+            <div class="menu-item-info">
+                <strong>Pounded Yam</strong>
+                <small>Freshly prepared</small>
+            </div>
+
+            <span class="menu-price">₦1,000</span>
+
+        </div>
+
+
+        <!-- PROTEIN -->
+
+        <div class="menu-item" data-category="protein"
+             onclick="orderItem('Meat')">
+
+            <div class="menu-item-info">
+                <strong>Meat</strong>
+                <small>Assorted meat portion</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="protein"
+             onclick="orderItem('Beef')">
+
+            <div class="menu-item-info">
+                <strong>Beef</strong>
+                <small>Fresh beef portion</small>
+            </div>
+
+            <span class="menu-price">₦500</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="protein"
+             onclick="orderItem('Fish')">
+
+            <div class="menu-item-info">
+                <strong>Fish</strong>
+                <small>Fresh fish portion</small>
+            </div>
+
+            <span class="menu-price">₦1,500</span>
+
+        </div>
+
+
+        <!-- RICE -->
+
+        <div class="menu-item" data-category="rice"
+             onclick="orderItem('Jollof Rice')">
+
+            <div class="menu-item-info">
+                <strong>Jollof Rice</strong>
+                <small>Rich Nigerian party-style rice</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+
+        <div class="menu-item" data-category="rice"
+             onclick="orderItem('Fried Rice')">
+
+            <div class="menu-item-info">
+                <strong>Fried Rice</strong>
+                <small>Colourful Nigerian fried rice</small>
+            </div>
+
+            <span class="menu-price">Order →</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="section" id="gallery">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">Food Gallery</div>
+
+        <h2>A Taste Before You Arrive</h2>
+
+        <p>
+            See some of the dishes and meals available at Eko Restaurant Ventures.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0762.jpg" alt="Amala with gbegiri and ewedu">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0761.jpg" alt="Efo riro with amala">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0763.jpg" alt="Assorted pepper soup">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0764.jpg" alt="Egusi soup">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0766.jpg" alt="Fish pepper stew">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0768.jpg" alt="Seafood and ponmo">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0769.jpg" alt="Amala and fried fish">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0770.jpg" alt="Okro soup">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0771.jpg" alt="Amala and ewedu">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0775.jpg" alt="Vegetable soup">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0776.jpg" alt="Egusi soup with meat">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0783.jpg" alt="Pounded yam and soup">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0784.jpg" alt="Nigerian meal">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0785.jpg" alt="Assorted Nigerian soups">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0787.jpg" alt="Fried rice">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0789.jpg" alt="Jollof rice">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/IMG_0769-2.jpg" alt="Amala ewedu and fish">
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/images/hero-amala.jpg" alt="Signature Amala dish">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section" id="about">
+
+    <div class="about">
 
         <div class="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1000&q=85"
-            alt="Nigerian food"
-          >
-        </div>
 
-        <div class="about-text">
-
-          <div class="section-title" style="text-align:left; margin-bottom:20px;">
-            <span>Welcome</span>
-            <h2>Eat Well. Enjoy More.</h2>
-          </div>
-
-          <p>
-            At Eko Restaurant Ventures, we believe good food should be
-            delicious, filling and enjoyable.
-          </p>
-
-          <p>
-            Whether you're stopping by for a quick meal or ordering food
-            to enjoy elsewhere, we've got you covered.
-          </p>
-
-          <div class="location-box">
-            <strong>📍 Location</strong><br>
-            FHA Lugbe, Abuja
-          </div>
+            <img src="assets/images/IMG_0775.jpg"
+                 alt="Nigerian traditional meal">
 
         </div>
 
-      </div>
+
+        <div class="about-content">
+
+            <div class="eyebrow">About Us</div>
+
+            <h2>Good Food. Good People. Good Times.</h2>
+
+            <p>
+                Eko Restaurant Ventures — Amala Spot Lugbe is all about
+                serving authentic Nigerian flavours in a relaxed and welcoming
+                environment.
+            </p>
+
+            <p>
+                From hot amala and silky ewedu to rich soups, assorted meats,
+                seafood and rice dishes, there's something for everyone.
+            </p>
+
+            <ul class="about-list">
+
+                <li>Authentic Nigerian meals</li>
+                <li>Open 24 hours, 7 days a week</li>
+                <li>Outdoor garden seating</li>
+                <li>Live music & sports screenings</li>
+                <li>WhatsApp ordering available</li>
+
+            </ul>
+
+            <a class="btn btn-primary"
+               href="https://wa.me/2348033187101?text=Hello%20Eko%20Restaurant%20Ventures%2C%20I%20would%20like%20to%20place%20an%20order."
+               target="_blank">
+
+                💬 Chat With Us
+
+            </a>
+
+        </div>
 
     </div>
-  </section>
+
+</section>
 
 
-  <!-- MENU -->
-  <section id="menu">
+<!-- =========================
+     LOCATION
+========================= -->
 
-    <div class="container">
+<section class="location" id="location">
 
-      <div class="section-title">
-        <span>Our Menu</span>
-        <h2>Customer Favourites</h2>
-        <p>
-          Enjoy tasty Nigerian meals prepared for you.
+    <div class="section">
+
+        <div class="location-grid">
+
+            <div>
+
+                <div class="eyebrow">Come Visit Us</div>
+
+                <h2>Find Us in Lugbe</h2>
+
+                <p>
+                    We're located behind Rotabol Pharmacy at FHA,
+                    Total Corner, Lugbe, Abuja.
+                </p>
+
+
+                <div class="contact-row">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <strong>Address</strong>
+                        <p>
+                            Shop behind Rotabol Pharmacy,
+                            FHA, Total Corner, Lugbe, Abuja.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>
+                            <a href="tel:07018441866">
+                                0701 844 1866
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="hero-buttons">
+
+                    <a class="btn btn-primary"
+                       href="https://www.google.com/maps/search/?api=1&query=Eko+Restaurant+Ventures+Amala+Spot+Lugbe"
+                       target="_blank">
+
+                        📍 Get Directions
+
+                    </a>
+
+                    <a class="btn btn-outline"
+                       href="tel:07018441866">
+
+                        📞 Call
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="map-box">
+
+                <a class="map-button"
+                   href="https://www.google.com/maps/search/?api=1&query=Eko+Restaurant+Ventures+Amala+Spot+Lugbe"
+                   target="_blank">
+
+                    📍 Open in Google Maps
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">Customer Love</div>
+
+        <h2>Loved by Lugbe</h2>
+
+    </div>
+
+
+    <div class="reviews">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                “The best amala in Abuja, period. The gbegiri is exactly
+                how my grandmother used to make it.”
+            </p>
+
+            <strong>— Happy Customer</strong>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                “Open 24 hours is a lifesaver. Great outdoor seating
+                and the live music nights are unmatched.”
+            </p>
+
+            <strong>— Lugbe Customer</strong>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                “The food portions are great and ordering through
+                WhatsApp makes everything so easy.”
+            </p>
+
+            <strong>— Satisfied Customer</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+
+            <strong>EKO VENTURES</strong>
+
+            <p>
+                Amala Spot Lugbe · Abuja
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#gallery">Gallery</a>
+
+            <a href="#about">About</a>
+
+            <a href="#location">Location</a>
+
+            <a href="https://wa.me/2348033187101"
+               target="_blank">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Eko Restaurant Ventures. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     FLOATING WHATSAPP
+========================= -->
+
+<a class="whatsapp-float"
+   href="https://wa.me/2348033187101?text=Hello%20Eko%20Restaurant%20Ventures%2C%20I%20would%20like%20to%20place%20an%20order."
+   target="_blank"
+   aria-label="Order on WhatsApp">
+
+    💬
+
+</a>
+
+
+<!-- =========================
+     ORDER MODAL
+========================= -->
+
+<div class="modal" id="orderModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close"
+                onclick="closeOrder()">
+            ×
+        </button>
+
+        <h3 id="modalFood">
+            Food Item
+        </h3>
+
+        <p id="modalPrice">
+            Select quantity
         </p>
-      </div>
 
-      <div class="menu-grid">
 
-        <div class="menu-card">
-          <img
-            src="https://images.unsplash.com/photo-1627308595186-edc8a1a2d7a6?auto=format&fit=crop&w=900&q=85"
-            alt="Amala and soup"
-          >
-          <div class="menu-info">
-            <h3>Amala & Soup</h3>
-            <p>Soft amala served with delicious Nigerian soup.</p>
-            <div class="price">Order Now</div>
-          </div>
+        <div class="quantity">
+
+            <strong>Quantity</strong>
+
+            <div class="quantity-controls">
+
+                <button class="qty-btn"
+                        onclick="changeQuantity(-1)">
+                    −
+                </button>
+
+                <span class="qty-number"
+                      id="quantity">
+                    1
+                </span>
+
+                <button class="qty-btn"
+                        onclick="changeQuantity(1)">
+                    +
+                </button>
+
+            </div>
+
         </div>
 
 
-        <div class="menu-card">
-          <img
-            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=85"
-            alt="Jollof rice"
-          >
-          <div class="menu-info">
-            <h3>Jollof Rice</h3>
-            <p>Rich and tasty Nigerian-style jollof rice.</p>
-            <div class="price">Order Now</div>
-          </div>
-        </div>
+        <button class="modal-order"
+                onclick="sendOrder()">
 
+            💬 Continue to WhatsApp
 
-        <div class="menu-card">
-          <img
-            src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85"
-            alt="Rice meal"
-          >
-          <div class="menu-info">
-            <h3>Rice & Stew</h3>
-            <p>A satisfying Nigerian rice meal with tasty stew.</p>
-            <div class="price">Order Now</div>
-          </div>
-        </div>
-
-
-        <div class="menu-card">
-          <img
-            src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85"
-            alt="Nigerian food"
-          >
-          <div class="menu-info">
-            <h3>Local Delicacies</h3>
-            <p>Traditional meals prepared with authentic flavours.</p>
-            <div class="price">Order Now</div>
-          </div>
-        </div>
-
-
-        <div class="menu-card">
-          <img
-            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
-            alt="Food"
-          >
-          <div class="menu-info">
-            <h3>Swallow & Soup</h3>
-            <p>Your choice of swallow served with delicious soup.</p>
-            <div class="price">Order Now</div>
-          </div>
-        </div>
-
-
-        <div class="menu-card">
-          <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
-            alt="Fresh food"
-          >
-          <div class="menu-info">
-            <h3>More Delicious Options</h3>
-            <p>Ask us about today's available meals and specials.</p>
-            <div class="price">Order Now</div>
-          </div>
-        </div>
-
-      </div>
+        </button>
 
     </div>
 
-  </section>
+</div>
 
 
-  <!-- WHY US -->
-  <section>
+<script>
 
-    <div class="container">
+/* =========================
+   WHATSAPP NUMBER
+========================= */
 
-      <div class="section-title">
-        <span>Why Choose Us</span>
-        <h2>Made For You</h2>
-      </div>
-
-      <div class="features">
-
-        <div class="feature">
-          <div class="feature-icon">🍲</div>
-          <h3>Delicious Meals</h3>
-          <p>
-            Enjoy satisfying Nigerian meals prepared with care.
-          </p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">⚡</div>
-          <h3>Easy Ordering</h3>
-          <p>
-            Place your order quickly through WhatsApp.
-          </p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">📍</div>
-          <h3>FHA Lugbe</h3>
-          <p>
-            Conveniently located in FHA Lugbe, Abuja.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+const WHATSAPP_NUMBER = "2348033187101";
 
 
-  <!-- CALL TO ACTION -->
-  <section class="cta">
+/* =========================
+   MOBILE NAV
+========================= */
 
-    <div class="container">
+function toggleMenu() {
 
-      <h2>Hungry?</h2>
+    const nav = document.getElementById("navLinks");
 
-      <p>
-        Don't wait. Get your favourite meal from Eko Restaurant Ventures.
-      </p>
+    nav.classList.toggle("open");
 
-      <!-- CHANGE THE NUMBER BELOW -->
-      <a
-        href="https://wa.me/2348033187101"
-        target="_blank"
-        class="hero-buttons primary"
-        style="display:inline-block;"
-      >
-        Order on WhatsApp
-      </a>
-
-    </div>
-
-  </section>
+}
 
 
-  <!-- CONTACT -->
-  <section id="contact">
+/* Close mobile menu after clicking */
 
-    <div class="container">
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-      <div class="section-title">
-        <span>Contact Us</span>
-        <h2>Come & Eat</h2>
-      </div>
+    link.addEventListener("click", () => {
 
-      <div class="contact-grid">
+        document.getElementById("navLinks")
+            .classList.remove("open");
 
-        <div class="contact-card">
+    });
 
-          <h3>📍 Visit Us</h3>
-
-          <p>
-            <strong>Eko Restaurant Ventures</strong>
-          </p>
-
-          <p>
-            Amala Spot<br>
-            FHA Lugbe, Abuja, Nigeria
-          </p>
-
-        </div>
+});
 
 
-        <div class="contact-card">
+/* =========================
+   DIRECT MENU ORDER
+========================= */
 
-          <h3>💬 Order Online</h3>
+function orderItem(item) {
 
-          <p>
-            Send us a message on WhatsApp to place your order.
-          </p>
+    const message =
+        `Hello Eko Restaurant Ventures, I would like to order ${item}.`;
 
-          <!-- CHANGE THE NUMBER BELOW -->
-          <a
-            href="https://wa.me/2348033187101"
-            target="_blank"
-            class="contact-link"
-          >
-            Chat on WhatsApp
-          </a>
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-        </div>
+    window.open(url, "_blank");
 
-      </div>
-
-    </div>
-
-  </section>
+}
 
 
-  <!-- FOOTER -->
-  <footer>
+/* =========================
+   FEATURED FOOD MODAL
+========================= */
 
-    <div class="footer-logo">
-      EKO RESTAURANT VENTURES
-    </div>
-
-    <p>
-      Amala Spot • FHA Lugbe, Abuja
-    </p>
-
-    <p style="margin-top:10px;">
-      ©DUKE'S DEMO 2026 Eko Restaurant Ventures. All rights reserved.
-    </p>
-
-  </footer>
+let selectedFood = "";
+let selectedPrice = "";
+let selectedQuantity = 1;
 
 
-  <!-- FLOATING WHATSAPP -->
-  <!-- CHANGE THE NUMBER BELOW -->
-  <a
-    href="https://wa.me/2348033187101"
-    target="_blank"
-    class="whatsapp"
-    aria-label="Order on WhatsApp"
-  >
-    ☎
-  </a>
+function openOrder(food, price) {
+
+    selectedFood = food;
+    selectedPrice = price;
+    selectedQuantity = 1;
+
+    document.getElementById("modalFood").textContent = food;
+
+    document.getElementById("modalPrice").textContent =
+        price;
+
+    document.getElementById("quantity").textContent =
+        selectedQuantity;
+
+    document.getElementById("orderModal")
+        .classList.add("show");
+
+}
+
+
+function closeOrder() {
+
+    document.getElementById("orderModal")
+        .classList.remove("show");
+
+}
+
+
+function changeQuantity(amount) {
+
+    selectedQuantity += amount;
+
+    if (selectedQuantity < 1) {
+        selectedQuantity = 1;
+    }
+
+    if (selectedQuantity > 20) {
+        selectedQuantity = 20;
+    }
+
+    document.getElementById("quantity").textContent =
+        selectedQuantity;
+
+}
+
+
+function sendOrder() {
+
+    const message =
+        `Hello Eko Restaurant Ventures!\n\n` +
+        `I would like to order:\n` +
+        `${selectedQuantity} × ${selectedFood}\n` +
+        `Price shown: ${selectedPrice}\n\n` +
+        `Please confirm my order.`;
+
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+    closeOrder();
+
+}
+
+
+/* =========================
+   CLOSE MODAL WHEN CLICKING
+   OUTSIDE IT
+========================= */
+
+document.getElementById("orderModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeOrder();
+        }
+
+    });
+
+
+/* =========================
+   MENU FILTER
+========================= */
+
+function filterMenu(category, button) {
+
+    document.querySelectorAll(".menu-tab")
+        .forEach(tab => tab.classList.remove("active"));
+
+    button.classList.add("active");
+
+    document.querySelectorAll(".menu-item")
+        .forEach(item => {
+
+            if (
+                category === "all" ||
+                item.dataset.category === category
+            ) {
+
+                item.style.display = "flex";
+
+            } else {
+
+                item.style.display = "none";
+
+            }
+
+        });
+
+}
+
+
+/* =========================
+   ESC KEY CLOSE
+========================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeOrder();
+    }
+
+});
+
+</script>
 
 </body>
 </html>
