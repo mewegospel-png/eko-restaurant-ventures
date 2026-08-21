@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Eko Restaurant Ventures | Amala Spot Lugbe</title>
+
+  <meta
+    name="description"
+    content="Eko Restaurant Ventures - Amala Spot in FHA Lugbe. Delicious Nigerian meals, available for takeaway and delivery."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fffaf2;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #111;
+      color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: #f4a000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: #f4a000;
+    }
+
+    .order-btn {
+      background: #25d366;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 25px;
+      font-weight: 700;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.62), rgba(0,0,0,0.62)),
+        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .hero-small {
+      color: #f4a000;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1.05;
+      max-width: 750px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 19px;
+      margin-bottom: 30px;
+      color: #f5f5f5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons a {
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-weight: 800;
+    }
+
+    .primary {
+      background: #f4a000;
+      color: #111;
+    }
+
+    .secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: #f4a000;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 10px auto 0;
+      color: #666;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    }
+
+    .about-image img {
+      height: 430px;
+      object-fit: cover;
+    }
+
+    .about-text h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .location-box {
+      background: #fff;
+      padding: 18px;
+      border-left: 5px solid #f4a000;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* MENU */
+    #menu {
+      background: #f4eadb;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 7px 20px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .menu-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .menu-info {
+      padding: 20px;
+    }
+
+    .menu-info h3 {
+      font-size: 21px;
+      margin-bottom: 5px;
+    }
+
+    .menu-info p {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-weight: 900;
+      color: #d88300;
+      font-size: 18px;
+    }
+
+    /* WHY US */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 30px 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #666;
+    }
+
+    /* CTA */
+    .cta {
+      background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 43px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #eee;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .contact-card p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin-top: 15px;
+      background: #25d366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 800;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer .footer-logo {
+      color: #f4a000;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 2000;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+      .nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image img {
+        height: 320px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .cta h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <a href="#home" class="logo">EKO RESTAURANT VENTURES</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+
+        <!-- CHANGE THE NUMBER BELOW -->
+        <a
+          class="order-btn"
+          href="https://wa.me/2348033187101"
+          target="_blank"
+        >
+          Order on WhatsApp
+        </a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="hero-small">
+        Amala Spot • FHA Lugbe
+      </div>
+
+      <h1>
+        Good Food.<br>
+        Good People.<br>
+        Good Vibes.
+      </h1>
+
+      <p>
+        Welcome to Eko Restaurant Ventures — your spot for delicious,
+        satisfying Nigerian meals in FHA Lugbe.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#menu" class="primary">View Our Menu</a>
+
+        <!-- CHANGE THE NUMBER BELOW -->
+        <a
+          href="https://wa.me/2348033187101"
+          target="_blank"
+          class="secondary"
+        >
+          Order Now
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+
+      <div class="about">
+
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1000&q=85"
+            alt="Nigerian food"
+          >
+        </div>
+
+        <div class="about-text">
+
+          <div class="section-title" style="text-align:left; margin-bottom:20px;">
+            <span>Welcome</span>
+            <h2>Eat Well. Enjoy More.</h2>
+          </div>
+
+          <p>
+            At Eko Restaurant Ventures, we believe good food should be
+            delicious, filling and enjoyable.
+          </p>
+
+          <p>
+            Whether you're stopping by for a quick meal or ordering food
+            to enjoy elsewhere, we've got you covered.
+          </p>
+
+          <div class="location-box">
+            <strong>📍 Location</strong><br>
+            FHA Lugbe, Abuja
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MENU -->
+  <section id="menu">
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Our Menu</span>
+        <h2>Customer Favourites</h2>
+        <p>
+          Enjoy tasty Nigerian meals prepared for you.
+        </p>
+      </div>
+
+      <div class="menu-grid">
+
+        <div class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1627308595186-edc8a1a2d7a6?auto=format&fit=crop&w=900&q=85"
+            alt="Amala and soup"
+          >
+          <div class="menu-info">
+            <h3>Amala & Soup</h3>
+            <p>Soft amala served with delicious Nigerian soup.</p>
+            <div class="price">Order Now</div>
+          </div>
+        </div>
+
+
+        <div class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=85"
+            alt="Jollof rice"
+          >
+          <div class="menu-info">
+            <h3>Jollof Rice</h3>
+            <p>Rich and tasty Nigerian-style jollof rice.</p>
+            <div class="price">Order Now</div>
+          </div>
+        </div>
+
+
+        <div class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85"
+            alt="Rice meal"
+          >
+          <div class="menu-info">
+            <h3>Rice & Stew</h3>
+            <p>A satisfying Nigerian rice meal with tasty stew.</p>
+            <div class="price">Order Now</div>
+          </div>
+        </div>
+
+
+        <div class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85"
+            alt="Nigerian food"
+          >
+          <div class="menu-info">
+            <h3>Local Delicacies</h3>
+            <p>Traditional meals prepared with authentic flavours.</p>
+            <div class="price">Order Now</div>
+          </div>
+        </div>
+
+
+        <div class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85"
+            alt="Food"
+          >
+          <div class="menu-info">
+            <h3>Swallow & Soup</h3>
+            <p>Your choice of swallow served with delicious soup.</p>
+            <div class="price">Order Now</div>
+          </div>
+        </div>
+
+
+        <div class="menu-card">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85"
+            alt="Fresh food"
+          >
+          <div class="menu-info">
+            <h3>More Delicious Options</h3>
+            <p>Ask us about today's available meals and specials.</p>
+            <div class="price">Order Now</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY US -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Why Choose Us</span>
+        <h2>Made For You</h2>
+      </div>
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="feature-icon">🍲</div>
+          <h3>Delicious Meals</h3>
+          <p>
+            Enjoy satisfying Nigerian meals prepared with care.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Easy Ordering</h3>
+          <p>
+            Place your order quickly through WhatsApp.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">📍</div>
+          <h3>FHA Lugbe</h3>
+          <p>
+            Conveniently located in FHA Lugbe, Abuja.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CALL TO ACTION -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>Hungry?</h2>
+
+      <p>
+        Don't wait. Get your favourite meal from Eko Restaurant Ventures.
+      </p>
+
+      <!-- CHANGE THE NUMBER BELOW -->
+      <a
+        href="https://wa.me/2348033187101"
+        target="_blank"
+        class="hero-buttons primary"
+        style="display:inline-block;"
+      >
+        Order on WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="section-title">
+        <span>Contact Us</span>
+        <h2>Come & Eat</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+
+          <h3>📍 Visit Us</h3>
+
+          <p>
+            <strong>Eko Restaurant Ventures</strong>
+          </p>
+
+          <p>
+            Amala Spot<br>
+            FHA Lugbe, Abuja, Nigeria
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>💬 Order Online</h3>
+
+          <p>
+            Send us a message on WhatsApp to place your order.
+          </p>
+
+          <!-- CHANGE THE NUMBER BELOW -->
+          <a
+            href="https://wa.me/2348033187101"
+            target="_blank"
+            class="contact-link"
+          >
+            Chat on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      EKO RESTAURANT VENTURES
+    </div>
+
+    <p>
+      Amala Spot • FHA Lugbe, Abuja
+    </p>
+
+    <p style="margin-top:10px;">
+      ©DUKE'S DEMO 2026 Eko Restaurant Ventures. All rights reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <!-- CHANGE THE NUMBER BELOW -->
+  <a
+    href="https://wa.me/2348033187101"
+    target="_blank"
+    class="whatsapp"
+    aria-label="Order on WhatsApp"
+  >
+    ☎
+  </a>
+
+</body>
+</html>
